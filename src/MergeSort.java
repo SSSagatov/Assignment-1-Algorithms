@@ -50,6 +50,7 @@ public class MergeSort {
 
     }
 
+    //part of merge sort
     void sort(int[] array, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -63,9 +64,23 @@ public class MergeSort {
         }
     }
 
+    //insertion sort used for array which length is less than 20 elements in it
+    void insertSort(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            int key = array[i];
+            int j = i - 1;
+
+            while(j >= 0 && array[j] > key) {
+                array[j+1] = array[j];
+                j--;
+            }
+            array[j+1] = key;
+        }
+    }
+
     public static void main(String[] args) {
         //testing array
-//      int[] arr = {4,3,6,4,7,8,9,4,5,3,2};
+        //int[] arr = {4,3,6,4,7,8,9,4,5,3,2};
         //Input the length of array
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -77,10 +92,16 @@ public class MergeSort {
             arr[i] = sc.nextInt();
         }
 
-        // Calling the merge function
-        // Also send the args to sort function
         MergeSort ms = new MergeSort();
-        ms.sort(arr, 0, arr.length - 1);
+        // Calling the merge function or insert sort
+        // Also send the args to sort function
+        if(arr.length >= 20 ) {
+            //merge sort
+            ms.sort(arr, 0, arr.length - 1);
+        } else {
+            //insert sort
+            ms.insertSort(arr);
+        }
         System.out.println(Arrays.toString(arr));
     }
 }
