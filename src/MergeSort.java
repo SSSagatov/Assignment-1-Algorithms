@@ -65,16 +65,16 @@ public class MergeSort {
     }
 
     //insertion sort used for array which length is less than 20 elements in it
-    void insertSort(int[] array) {
-        for (int i = 1; i < array.length; i++) {
-            int key = array[i];
+    void insertSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
             int j = i - 1;
 
-            while(j >= 0 && array[j] > key) {
-                array[j+1] = array[j];
+            while(j >= 0 && arr[j] > key) {
+                arr[j+1] = arr[j];
                 j--;
             }
-            array[j+1] = key;
+            arr[j+1] = key;
         }
     }
 
