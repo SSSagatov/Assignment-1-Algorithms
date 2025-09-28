@@ -20,8 +20,8 @@ public class MergeSort {
         for (int j = 0; j < n2; j++)
             R[j] =  arr[mid+1+j];
 
-        // Merge the temp arrays
-        // Initial indexes of both subarrays
+        // merge the temp arrays
+        // initial indexes of both subarrays
         int i = 0, j = 0;
         int k = left;
 
@@ -93,8 +93,8 @@ public class MergeSort {
         }
 
         MergeSort ms = new MergeSort();
-        // Calling the merge function or insert sort
-        // Also send the args to sort function
+        //calling the merge function or insert sort
+        //also send the args to sort function
         if(arr.length >= 20 ) {
             //merge sort
             ms.sort(arr, 0, arr.length - 1);
